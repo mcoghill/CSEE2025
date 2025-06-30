@@ -1,0 +1,114 @@
+---
+main_topsize: 0.075 #percent coverage of the poster
+main_bottomsize: 0.05
+#ESSENTIALS
+title: '**Wildfire trends and their relationship with ecosystem stability across Canada and the United States**' 
+poster_height: '26in'
+poster_width: '38in'
+poster_margin: '0.24in'
+author:
+  - name: '**Matthew Coghill -- mcoghill@tru.ca**'
+    affil: 1
+    main: true
+  - name: Jay Prakash Singh
+    affil: 1
+    main: false
+    email: jsingh@tru.ca
+  - name: Lauchlan Fraser
+    affil: 1
+    main: false
+    email: lfraser@tru.ca
+affiliation:
+  - num: 1
+    address: Department of Natural Resource Science, Thompson Rivers University
+main_findings:
+  - "![caption](images/fig2_methods.png){.main_pic}"
+main_findings2:
+  - "Figure 2: Graphical depiction of data collection methods. Openly sourced fire data from Canada and USA were collected and used to download NDVI data collected from Landsat satellites in Google Earth Engine for all years between 1985 and 2020."
+main_findings_heading:
+  - "Results"
+main_findings3:
+  - "![](images/fig3_stability.png){.main_pic}"
+main_findings4:
+  - "Figure 3: Log response ratios (LRR's) of NDVI stability calculated across 5 year chunks, split across level 1 ecoregion classifications defined by the EPA. Solid lines indicate that the change in the LRR over time was significant."
+main_findings5:
+  - "Ecosystems are stable before fires occur"
+  - "Length of time to full recovery differs across ecotypes"
+  - "Fires can impact stability of an ecosystem depending on the ecotype"
+main_findings_heading2:
+  - "Are we witnessing the development of altered stable ecosystems as a result of wildfire activity?"
+main_picwidth: '18.52in'
+column_padding: '0.24in'
+main_padding: '0.24in'
+main_fontfamily: 'Roboto Slab'
+font_family: 'Roboto Slab'
+main_textcol: '#fff5de'
+output: 
+  posterdown::posterdown_betterland:
+    self_contained: false
+    pandoc_args: --mathjax
+    highlight: haddock
+    number_sections: false
+link-citations: true
+bibliography: etc/refs.bib
+csl: etc/nature.csl
+primary_colour: '#003e51'
+secondary_colour: '#003e51'
+accent_colour: '#003e51'
+body_bgcol: '#fff5de'
+title_textsize: '54pt'
+body_textsize: '24pt'
+body_textcol: '#003e51'
+authorextra_textsize: '20pt'
+affiliation_textsize: '18pt'
+affiliation_textcol: '#9ab7c1'
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(results = 'asis',
+                      echo = FALSE,
+                      warning = FALSE,
+                      tidy = FALSE,
+                      message = FALSE,
+                      fig.align = 'center',
+                      out.width = "100%",
+                      dev.args = list(bg = 'transparent'))
+options(knitr.table.format = "html") 
+```
+
+## Introduction
+
+Wildfire frequency, intensity, and severity have increased over the last four decades across North America (Figure 1). Ecosystem stability pre- and post-fire over a continental scale remains poorly studied. This study investigates ecosystem stability dynamics over 40 years across Canada and the US, broken up by EPA Level 1 Ecotypes (Figure 4)[@cec_ecological_1997]. As climate change continues to impact our planet, understanding these ecosystem changes is paramount to the potential prediction of future environmental and economic impacts.
+
+![Figure 1: Fire frequency by latitude and decade broken up by fire sizes.](images/fig1_fire_frequency_latitude.png){width=100%}
+
+## Methods
+
+NDVI data was required where fires were located on the year they burned, as well as all years before it burned and all years after it burned. NDVI from adjacent non-burned areas was also collected. All data and methods used in this project were free and openly sourced (CNFDB, USDA, GEE, R, Python, GitHub), allowing this work to be reproduced very easily (including code to generate this poster)[@gorelick_google_2017; @canadian_forest_service_canadian_2021; @welty_combined_2021]. General steps included (Figure 2):
+
+1. Download fire polygon data from Canada and US;
+2. Extract NDVI from Landsat satellite imagery for each fire and its surrounding areas for all years between 1985 and 2020;
+3. Determine ecosystem stability over 5 year chunks (inverse of the variance of NDVI in both burned and unburned areas);
+4. Calculate the logged response ratio of NDVI stability, and run GAM models to determine the significance of the smoothing function (Figure 3).
+
+Significant trends that are noted may indicate that the ecosystems stability may have shifted causing an altered stable state (Figure 5)[@beisner_alternative_2003].
+
+![Figure 4: EPA Level 1 ecoregions across Canada and US.](images/fig4_ecoregions.png){width=100%}
+
+## Discussion
+
+Some ecotypes that are perturbed by fire events will eventually return to their original state, however other ecotypes appear to change their state altogether. These altered stable states can have drastic effects on the biodiversity and ecological processes that occur in these areas. Further understanding how fire may impact these regions will be crucial in the face of climate change events which will undoubtedly increase fire risk across the globe.
+
+![Figure 5: Stable state theory. Environmental disturbances can push an ecosystem from one stable state to another entirely new stable ecosystem. An equal and opposite force cannot push this ecosystem back to its original stable state.](images/fig5_stable_states.svg){width=100%}
+
+## Future Work
+
+Climate variables will be incorporated into these analyses to further improve our understanding of how fire can impact ecosystem stability. Additionally, fire intensity can be calculated for each fire allowing deeper classification of ecosystem stability. Similar analyses can also be completed for other spectral indices which could lend further support to the alternative stable ecosystem state hypothesis.
+
+## Acknowledgements
+
+<p class="references">This work could not have been completed without the immense expertise and support from Dr. Jay Prakash Singh, Dr. Lauchlan Fraser, and the entire team at the Fraser Lab.</p>
+
+![](images/Logo_Row.png){.logo-img}
+
+## References

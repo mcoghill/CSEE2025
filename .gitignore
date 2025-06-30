@@ -8,6 +8,12 @@
 
 # User-specific files
 .Ruserdata
+Rplot*
+data
+Coghill_M_Poster_files
+etc/GIMP
+etc/QGIS
+etc/Roboto_Slab
 
 # Example code in package build process
 *-Ex.R

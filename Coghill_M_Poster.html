@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<title>Wildfire trends and their relationship with ecosystem stability across Canada and the United States</title>
+
+
+
+
+
+
+
+<!--
+Font-awesome icons ie github or twitter
+-->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/brands.css" integrity="sha384-n9+6/aSqa9lBidZMRCQHTHKJscPq6NW4pCQBiMmHdUCvPN8ZOg2zJJTkC7WIezWv" crossorigin="anonymous">
+
+<!--
+Google fonts api stuff
+-->
+<link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'>
+
+<!--
+Here are the required style attributes for css to make this poster work :)
+-->
+<style>
+@page {
+size: 38in 26in;
+margin: 0;
+padding: 0;
+background-color: #fff5de;
+}
+body {
+margin: 0px;
+padding: 0px;
+width: 38in;
+height: 26in;
+text-align: left;
+line-height: 1.1;
+font-size: 24pt;
+background-color: #fff5de;
+color: #003e51;
+}
+/* RMarkdown Class Styles */
+/* center align leaflet map,
+from https://stackoverflow.com/questions/52112119/center-leaflet-in-a-rmarkdown-document */
+.html-widget {
+margin: auto;
+position: sticky;
+margin-top: 2cm;
+margin-bottom: 2cm;
+}
+.leaflet.html-widget.html-widget-static-bound.leaflet-container.leaflet-touch.leaflet-fade-anim.leaflet-grab.leaflet-touch-drag.leaflet-touch-zoom {
+position: sticky;
+width: 100%;
+}
+pre.sourceCode.r, pre.sourceCode.python {
+background-color: #ffffff20;
+border: solid #003e51 1mm;
+border-radius: 0.5em;
+padding: 4mm;
+margin: auto;
+margin-top: 1em;
+margin-bottom: 1em;
+/* align-items: center; */
+}
+div.sourceCode {
+background-color: transparent;
+width: 85%;
+margin-left: auto;
+margin-right: auto;
+}
+code.sourceCode.r, code.sourceCode.python {
+background-color: transparent;
+font-size: 20pt;
+border-radius: 2mm;
+}
+code {
+font-size: 25pt;
+font-family: monospace;
+background-color: #003e5124;
+color: #003e51;
+padding: 1.2mm;
+line-height: 1;
+border-radius: 2mm;
+}
+caption {
+margin-bottom: 10px;
+font-size: 20pt;
+font-style: italic;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #003e51;
+}
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td{
+  border-spacing: 0;
+  font-size: 40%;
+  border-style: none;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 1em;
+  padding-left: 1em;
+  line-height: 1em;
+}
+table {
+  margin: auto;
+}
+th {
+  padding-left: 5mm;
+  padding-right: 5mm;
+}
+.caption {
+font-size: 20pt;
+font-style: italic;
+padding-top: 0;
+}
+
+.figcaption {
+font-size: 20pt;
+font-style: italic;
+padding-top: 0;
+text-align: center;
+}
+
+.float {
+width: 100%;
+}
+
+.caption > code {
+font-size: calc( * 0.8);
+}
+references {
+font-size: 20px;
+line-height: 95%;
+}
+.references {
+font-size: 20px;
+line-height: 95%;
+}
+.references a {
+    color: #0b4545;
+}
+.csl-left-margin {
+position: absolute;
+width: 0.2in;
+}
+.csl-right-inline {
+position: relative;
+width: 9in;
+margin-left: 0.2in;
+}
+
+/* Create three unequal columns that floats next to each other */
+.column {
+float: left;
+padding: 0px;
+}
+.outer {
+width: 38in;
+height: 26in;
+-webkit-column-count: 2; /* Chrome, Safari, Opera */
+-moz-column-count: 2; /* Firefox */
+column-count: 2;
+-webkit-column-fill: auto;
+-moz-column-fill: auto;
+column-fill: auto;
+-webkit-column-rule-width: 0.5;
+-moz-column-rule-width: 0.5;
+column-rule-width: 0.5;
+-webkit-column-rule-style: solid;
+-moz-column-rule-style: solid;
+column-rule-style: solid;
+-webkit-column-rule-color: white;
+-moz-column-rule-color: white;
+column-rule-color: white;
+-webkit-column-gap: 50%;
+-moz-column-gap: 50%;
+column-gap: 50%;
+background-color: #fff5de;
+font-family: Roboto Slab;
+color: #003e51;
+}
+span.citation {
+  color: #003e51;
+  font-weight: bold;
+}
+a {
+text-decoration: none;
+color: #003e51;
+}
+#title {
+font-size: 54pt;
+text-align: left;
+margin: 0;
+line-height: 90%;
+border-bottom: 0;
+}
+#author {
+color: #003e51;
+margin: 0;
+text-align: left;
+font-size: 1.17em;
+}
+#affiliation {
+padding-top: 0.2em;
+color: #9ab7c1;
+font-style: italic;
+text-align: left;
+font-size: 18pt;
+margin: 0;
+}
+sup {
+color: #003e51;
+}
+.affiliation sup {
+font-size: 20px;
+}
+.author sup {
+font-size: 25px;
+}
+.author_extra {
+color: #003e51;
+margin: 0;
+line-height: 85%;
+font-size: 20pt;
+}
+.outer h1 {
+text-align: center;
+margin-bottom: 0;
+}
+.outer h2 {
+text-align: center;
+margin-bottom: 0;
+margin-top: 24pt;
+}
+.outer h3 {
+text-align: center;
+}
+.outer p {
+color: #003e51;
+margin-top: 0.12in;
+margin-bottom: 0.12in;
+}
+.outer ol {
+text-align: left;
+margin-top: 0;
+}
+.outer ul {
+text-align: left;
+margin-top: 0;
+}
+.main {
+width: calc(38in * 0.5);
+height: 26in;
+position: absolute;
+margin-left: calc(38in * 0.25);
+margin-top: -0.24in;
+padding-top: 0.24in;
+background-color: #003e51;
+color: #fff5de;
+font-family: Roboto Slab;
+background-image: linear-gradient(#003e51 50%, #003e51);
+}
+.main strong {
+color: #FFFFFF;
+}
+img.main-img-left {
+width: 10%;
+left: 0.24in;
+bottom: 0.24in;
+position: absolute;
+}
+img.main-img-right {
+width: 19%;
+right: 0in;
+bottom: 0in;
+position: absolute;
+}
+img.logo-img {
+width: 9.02in;
+top: 23.76in;
+position: absolute;
+}
+.main p {
+padding-top: 0.24in;
+margin-top: 0;
+margin-bottom: 0;
+text-align: left;
+}
+.main h2 {
+text-align: center;
+margin-bottom: 0.12in;
+margin-top: 24pt;
+}
+.main h3 {
+text-align: center;
+}
+.main h4 {
+padding-top: 0;
+margin-top: 1cm;
+margin-bottom: 10px;
+font-size: 20pt;
+font-style: italic;
+}
+.main ul {
+text-align: left;
+margin: 0.24in;
+columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+}
+.fab {
+color: #9ab7c1;
+font-size: 25px;
+}
+.twitter, i {
+color: #9ab7c1;
+font-size: 35px;
+text-decoration: none;
+}
+a.email {
+text-decoration: none;
+color: #9ab7c1;
+font-size: 35px;
+}
+.envelope {
+color: #9ab7c1;
+font-size: 5px;
+text-decoration: none;
+}
+.globe {
+color: #9ab7c1;
+font-size: 5px;
+text-decoration: none;
+}
+.github > .fab {
+color: #9ab7c1;
+font-size: 40px;
+text-decoration: none;
+}
+.globetext {
+color: #9ab7c1;
+font-size: 35px;
+text-decoration: none;
+}
+.poster_wrap {
+width: 38in;
+height: 26in;
+padding-top: 0.24in;
+padding-bottom: 0.24in;
+padding-left: 0;
+padding-right: 0;
+background-color: #fff5de;
+}
+span > #tab:mytable {
+  font-weight: bold;
+}
+.section {
+  padding-left: 0.24in;
+  padding-right: 0.24in;
+}
+.main p {
+  padding-left: 0.24in;
+  padding-right: 0.24in;
+}
+.main_pic {
+  width: 18.52in;
+  display: block;
+  margin-left: 0.24in;
+  margin-right: 0.24in;
+}
+.orcid img {
+  width: 3%;
+}
+</style>
+</head>
+<body>
+
+
+<div class="poster_wrap">
+<div class="column outer">
+<div class="title section">
+<h1 id="title"><strong>Wildfire trends and their relationship with ecosystem stability across Canada and the United States</strong></h1>
+<br>
+<h3 id="author" class="author">
+
+<strong>Matthew Coghill – <a href="mailto:mcoghill@tru.ca" class="email">mcoghill@tru.ca</a></strong><sup> 1</sup><br>
+
+  </h3>
+
+<h5 id="author_extra" class="author_extra">
+ Jay Prakash Singh<sup>1</sup>
+ Lauchlan Fraser<sup>1</sup>
+</h5>
+
+<p id="affiliation" class="affiliation">
+<sup>1</sup> Department of Natural Resource Science, Thompson Rivers University
+</p>
+
+</div>
+<div id="introduction" class="section level2">
+<h2>Introduction</h2>
+<p>Wildfire frequency, intensity, and severity have increased over the last four decades across North America (Figure 1). Ecosystem stability pre- and post-fire over a continental scale remains poorly studied. This study investigates ecosystem stability dynamics over 40 years across Canada and the US, broken up by EPA Level 1 Ecotypes (Figure 4)<span class="citation"><sup><a href="#ref-cec_ecological_1997">1</a></sup></span>. As climate change continues to impact our planet, understanding these ecosystem changes is paramount to the potential prediction of future environmental and economic impacts.</p>
+<div class="float">
+<img src="images/fig1_fire_frequency_latitude.png" style="width:100.0%" alt="Figure 1: Fire frequency by latitude and decade broken up by fire sizes." />
+<div class="figcaption">Figure 1: Fire frequency by latitude and decade broken up by fire sizes.</div>
+</div>
+</div>
+<div id="methods" class="section level2">
+<h2>Methods</h2>
+<p>NDVI data was required where fires were located on the year they burned, as well as all years before it burned and all years after it burned. NDVI from adjacent non-burned areas was also collected. All data and methods used in this project were free and openly sourced (CNFDB, USDA, GEE, R, Python, GitHub), allowing this work to be reproduced very easily (including code to generate this poster)<span class="citation"><sup><a href="#ref-gorelick_google_2017">2</a>–<a href="#ref-welty_combined_2021">4</a></sup></span>. General steps included (Figure 2):</p>
+<ol style="list-style-type: decimal">
+<li>Download fire polygon data from Canada and US;</li>
+<li>Extract NDVI from Landsat satellite imagery for each fire and its surrounding areas for all years between 1985 and 2020;</li>
+<li>Determine ecosystem stability over 5 year chunks (inverse of the variance of NDVI in both burned and unburned areas);</li>
+<li>Calculate the logged response ratio of NDVI stability, and run GAM models to determine the significance of the smoothing function (Figure 3).</li>
+</ol>
+<p>Significant trends that are noted may indicate that the ecosystems stability may have shifted causing an altered stable state (Figure 5)<span class="citation"><sup><a href="#ref-beisner_alternative_2003">5</a></sup></span>.</p>
+<div class="float">
+<img src="images/fig4_ecoregions.png" style="width:100.0%" alt="Figure 4: EPA Level 1 ecoregions across Canada and US." />
+<div class="figcaption">Figure 4: EPA Level 1 ecoregions across Canada and US.</div>
+</div>
+</div>
+<div id="discussion" class="section level2">
+<h2>Discussion</h2>
+<p>Some ecotypes that are perturbed by fire events will eventually return to their original state, however other ecotypes appear to change their state altogether. These altered stable states can have drastic effects on the biodiversity and ecological processes that occur in these areas. Further understanding how fire may impact these regions will be crucial in the face of climate change events which will undoubtedly increase fire risk across the globe.</p>
+<div class="float">
+<img src="images/fig5_stable_states.svg" style="width:100.0%" alt="Figure 5: Stable state theory. Environmental disturbances can push an ecosystem from one stable state to another entirely new stable ecosystem. An equal and opposite force cannot push this ecosystem back to its original stable state." />
+<div class="figcaption">Figure 5: Stable state theory. Environmental disturbances can push an ecosystem from one stable state to another entirely new stable ecosystem. An equal and opposite force cannot push this ecosystem back to its original stable state.</div>
+</div>
+</div>
+<div id="future-work" class="section level2">
+<h2>Future Work</h2>
+<p>Climate variables will be incorporated into these analyses to further improve our understanding of how fire can impact ecosystem stability. Additionally, fire intensity can be calculated for each fire allowing deeper classification of ecosystem stability. Similar analyses can also be completed for other spectral indices which could lend further support to the alternative stable ecosystem state hypothesis.</p>
+</div>
+<div id="acknowledgements" class="section level2">
+<h2>Acknowledgements</h2>
+<p class="references">
+This work could not have been completed without the immense expertise and support from Dr. Jay Prakash Singh, Dr. Lauchlan Fraser, and the entire team at the Fraser Lab.
+</p>
+<p><img src="images/Logo_Row.png" class="logo-img" /></p>
+</div>
+<div id="references" class="section level2 unnumbered">
+<h2>References</h2>
+<div id="refs" class="references csl-bib-body" entry-spacing="0" line-spacing="2">
+<div id="ref-cec_ecological_1997" class="csl-entry">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">CEC. <em>Ecological Regions of North America: Toward a Common Perspective</em>. (Commission for Environmental Cooperation, Montréal, Québec, 1997).</div>
+</div>
+<div id="ref-gorelick_google_2017" class="csl-entry">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Gorelick, N. <em>et al.</em> <a href="https://doi.org/10.1016/j.rse.2017.06.031">Google earth engine: Planetary-scale geospatial analysis for everyone</a>. <em>Remote Sensing of Environment</em> <strong>202</strong>, 18–27 (2017).</div>
+</div>
+<div id="ref-canadian_forest_service_canadian_2021" class="csl-entry">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">Canadian Forest Service. <a href="http://cwfis.cfs.nrcan.gc.ca/ha/nfdb">Canadian national fire database – agency fire data</a>. (2021).</div>
+</div>
+<div id="ref-welty_combined_2021" class="csl-entry">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">Welty, J. &amp; Jeffries, M. Combined wildland fire datasets for the united states and certain territories, 1800s-present. (2021) doi:<a href="https://doi.org/10.5066/P9ZXGFY3">10.5066/P9ZXGFY3</a>.</div>
+</div>
+<div id="ref-beisner_alternative_2003" class="csl-entry">
+<div class="csl-left-margin">5. </div><div class="csl-right-inline">Beisner, B. <em>et al.</em> <a href="https://doi.org/10.1890/1540-9295(2003)001%5B0376:ASSIE%5D2.0.CO;2">Alternative stable states in ecology</a>. <em>Frontiers in Ecology and the Environment</em> <strong>1</strong>, 376–382 (2003).</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="main">
+<div class="figure" style="text-align: center"><img src="images/fig2_methods.png" class="main_pic" alt="caption" />
+<p class="caption">Figure 2: Graphical depiction of data collection methods. Openly sourced fire data from Canada and USA were collected and used to download NDVI data collected from Landsat satellites in Google Earth Engine for all years between 1985 and 2020.</p></div>
+<h2>Results</h2>
+<div class="figure" style="text-align: center"><img src="images/fig3_stability.png" class="main_pic" />
+<p class="caption">Figure 3: Log response ratios (LRR’s) of NDVI stability calculated across 5 year chunks, split across level 1 ecoregion classifications defined by the EPA. Solid lines indicate that the change in the LRR over time was significant.</p></div>
+<ul><li>Ecosystems are stable before fires occur</li><li>Length of time to full recovery differs across ecotypes</li><li>Fires can impact stability of an ecosystem depending on the ecotype</li></ul>
+<h3>Are we witnessing the development of altered stable ecosystems as a result of wildfire activity?</h3>
+
+
+</div>
+</div>
+
+
+
+</body>
+</html>
