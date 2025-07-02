@@ -89,7 +89,8 @@ NDVI data was required where fires were located on the year they burned, as well
 1. Download fire polygon data from Canada and US;
 2. Extract NDVI from Landsat satellite imagery for each fire and its surrounding areas for all years between 1985 and 2020;
 3. Determine ecosystem stability over 5 year chunks (inverse of the variance of NDVI in both burned and unburned areas);
-4. Calculate the logged response ratio of NDVI stability, and run GAM models to determine the significance of the smoothing function (Figure 3).
+4. Calculate the logged response ratio of NDVI stability, and run GAM models to determine the significance of the smoothing function (Figure 3);
+5. Use LMER model to compare pre- and post-fire stabilities.
 
 Significant trends that are noted may indicate that the ecosystems stability may have shifted causing an altered stable state (Figure 5)[@beisner_alternative_2003].
 
@@ -97,7 +98,7 @@ Significant trends that are noted may indicate that the ecosystems stability may
 
 # Discussion
 
-Some ecotypes that are perturbed by fire events will eventually return to their original state, however other ecotypes appear to change their state altogether. These altered stable states can have drastic effects on the biodiversity and ecological processes that occur in these areas. Further understanding how fire may impact these regions will be crucial in the face of climate change events which will undoubtedly increase fire risk across the globe.
+Some ecotypes that are perturbed by fire events will eventually return to their original state, however other ecotypes appear to change their state altogether. These altered stable states can have drastic effects on the biodiversity and ecological processes that occur in these areas. Further understanding how fire may impact these regions will be crucial in the face of climate change events which will likely increase fire risk across the globe.
 
 ![Figure 5: Stable state theory. Environmental disturbances can push an ecosystem from one stable state to another entirely new stable ecosystem. An equal and opposite force cannot push this ecosystem back to its original stable state.](images/fig5_stable_states.svg){width=100%}
 
@@ -107,7 +108,7 @@ Climate variables will be incorporated into these analyses to further improve ou
 
 ## Acknowledgements
 
-<p class="references" style="margin-top: 0;">This work could not have been completed without the immense expertise and support from Dr. Jay Prakash Singh, Dr. Lauchlan Fraser, and the entire team at the Fraser Lab.</p>
+<p class="references" style="margin-top: 0;">Thank you to NSERC for the funding provided through the IRC Research Grant...ANYTHING ELSE?</p>
 
 ![](images/Logo_Row.png){.logo-img}
 
