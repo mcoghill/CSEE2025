@@ -45,7 +45,7 @@ width: 38in;
 height: 26in;
 text-align: left;
 line-height: 1.1;
-font-size: 24pt;
+font-size: 23.5pt;
 background-color: #fff5de;
 color: #003e51;
 }
@@ -94,7 +94,7 @@ border-radius: 2mm;
 }
 caption {
 margin-bottom: 10px;
-font-size: 20pt;
+font-size: 19.5pt;
 font-style: italic;
 }
 
@@ -119,13 +119,13 @@ th {
   padding-right: 5mm;
 }
 .caption {
-font-size: 20pt;
+font-size: 19.5pt;
 font-style: italic;
 padding-top: 0;
 }
 
 .figcaption {
-font-size: 20pt;
+font-size: 19.5pt;
 font-style: italic;
 padding-top: 0;
 text-align: center;
@@ -137,10 +137,6 @@ width: 100%;
 
 .caption > code {
 font-size: calc( * 0.8);
-}
-references {
-font-size: 20px;
-line-height: 95%;
 }
 .references {
 font-size: 20px;
@@ -198,7 +194,7 @@ text-decoration: none;
 color: #003e51;
 }
 #title {
-font-size: 54pt;
+font-size: 60pt;
 text-align: left;
 margin: 0;
 line-height: 90%;
@@ -236,11 +232,12 @@ font-size: 20pt;
 .outer h1 {
 text-align: center;
 margin-bottom: 0;
+margin-top: 0.24in;
 }
 .outer h2 {
 text-align: center;
 margin-bottom: 0;
-margin-top: 24pt;
+margin-top: 0.24in;
 }
 .outer h3 {
 text-align: center;
@@ -291,10 +288,12 @@ top: 23.76in;
 position: absolute;
 }
 .main p {
-padding-top: 0.24in;
-margin-top: 0;
-margin-bottom: 0;
 text-align: left;
+}
+.main h1 {
+text-align: center;
+margin-bottom: 0.12in;
+margin-top: 0.24in;
 }
 .main h2 {
 text-align: center;
@@ -377,6 +376,7 @@ span > #tab:mytable {
   display: block;
   margin-left: 0.24in;
   margin-right: 0.24in;
+  margin-bottom: 0.12in;
 }
 .orcid img {
   width: 3%;
@@ -407,16 +407,16 @@ span > #tab:mytable {
 </p>
 
 </div>
-<div id="introduction" class="section level2">
-<h2>Introduction</h2>
+<div id="introduction" class="section level1">
+<h1>Introduction</h1>
 <p>Wildfire frequency, intensity, and severity have increased over the last four decades across North America (Figure 1). Ecosystem stability pre- and post-fire over a continental scale remains poorly studied. This study investigates ecosystem stability dynamics over 40 years across Canada and the US, broken up by EPA Level 1 Ecotypes (Figure 4)<span class="citation"><sup><a href="#ref-cec_ecological_1997">1</a></sup></span>. As climate change continues to impact our planet, understanding these ecosystem changes is paramount to the potential prediction of future environmental and economic impacts.</p>
 <div class="float">
 <img src="images/fig1_fire_frequency_latitude.png" style="width:100.0%" alt="Figure 1: Fire frequency by latitude and decade broken up by fire sizes." />
 <div class="figcaption">Figure 1: Fire frequency by latitude and decade broken up by fire sizes.</div>
 </div>
 </div>
-<div id="methods" class="section level2">
-<h2>Methods</h2>
+<div id="methods" class="section level1">
+<h1>Methods</h1>
 <p>NDVI data was required where fires were located on the year they burned, as well as all years before it burned and all years after it burned. NDVI from adjacent non-burned areas was also collected. All data and methods used in this project were free and openly sourced (CNFDB, USDA, GEE, R, Python, GitHub), allowing this work to be reproduced very easily (including code to generate this poster)<span class="citation"><sup><a href="#ref-gorelick_google_2017">2</a>–<a href="#ref-welty_combined_2021">4</a></sup></span>. General steps included (Figure 2):</p>
 <ol style="list-style-type: decimal">
 <li>Download fire polygon data from Canada and US;</li>
@@ -430,21 +430,20 @@ span > #tab:mytable {
 <div class="figcaption">Figure 4: EPA Level 1 ecoregions across Canada and US.</div>
 </div>
 </div>
-<div id="discussion" class="section level2">
-<h2>Discussion</h2>
+<div id="discussion" class="section level1">
+<h1>Discussion</h1>
 <p>Some ecotypes that are perturbed by fire events will eventually return to their original state, however other ecotypes appear to change their state altogether. These altered stable states can have drastic effects on the biodiversity and ecological processes that occur in these areas. Further understanding how fire may impact these regions will be crucial in the face of climate change events which will undoubtedly increase fire risk across the globe.</p>
 <div class="float">
 <img src="images/fig5_stable_states.svg" style="width:100.0%" alt="Figure 5: Stable state theory. Environmental disturbances can push an ecosystem from one stable state to another entirely new stable ecosystem. An equal and opposite force cannot push this ecosystem back to its original stable state." />
 <div class="figcaption">Figure 5: Stable state theory. Environmental disturbances can push an ecosystem from one stable state to another entirely new stable ecosystem. An equal and opposite force cannot push this ecosystem back to its original stable state.</div>
 </div>
 </div>
-<div id="future-work" class="section level2">
-<h2>Future Work</h2>
+<div id="future-work" class="section level1">
+<h1>Future Work</h1>
 <p>Climate variables will be incorporated into these analyses to further improve our understanding of how fire can impact ecosystem stability. Additionally, fire intensity can be calculated for each fire allowing deeper classification of ecosystem stability. Similar analyses can also be completed for other spectral indices which could lend further support to the alternative stable ecosystem state hypothesis.</p>
-</div>
 <div id="acknowledgements" class="section level2">
 <h2>Acknowledgements</h2>
-<p class="references">
+<p class="references" style="margin-top: 0;">
 This work could not have been completed without the immense expertise and support from Dr. Jay Prakash Singh, Dr. Lauchlan Fraser, and the entire team at the Fraser Lab.
 </p>
 <p><img src="images/Logo_Row.png" class="logo-img" /></p>
@@ -469,12 +468,13 @@ This work could not have been completed without the immense expertise and suppor
 </div>
 </div>
 </div>
+</div>
 
 </div>
 <div class="main">
 <div class="figure" style="text-align: center"><img src="images/fig2_methods.png" class="main_pic" alt="caption" />
 <p class="caption">Figure 2: Graphical depiction of data collection methods. Openly sourced fire data from Canada and USA were collected and used to download NDVI data collected from Landsat satellites in Google Earth Engine for all years between 1985 and 2020.</p></div>
-<h2>Results</h2>
+<h1>Results</h1>
 <div class="figure" style="text-align: center"><img src="images/fig3_stability.png" class="main_pic" />
 <p class="caption">Figure 3: Log response ratios (LRR’s) of NDVI stability calculated across 5 year chunks, split across level 1 ecoregion classifications defined by the EPA. Solid lines indicate that the change in the LRR over time was significant.</p></div>
 <ul><li>Ecosystems are stable before fires occur</li><li>Length of time to full recovery differs across ecotypes</li><li>Fires can impact stability of an ecosystem depending on the ecotype</li></ul>

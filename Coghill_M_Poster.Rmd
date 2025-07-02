@@ -56,8 +56,8 @@ primary_colour: '#003e51'
 secondary_colour: '#003e51'
 accent_colour: '#003e51'
 body_bgcol: '#fff5de'
-title_textsize: '54pt'
-body_textsize: '24pt'
+title_textsize: '60pt'
+body_textsize: '23.5pt'
 body_textcol: '#003e51'
 authorextra_textsize: '20pt'
 affiliation_textsize: '18pt'
@@ -76,13 +76,13 @@ knitr::opts_chunk$set(results = 'asis',
 options(knitr.table.format = "html") 
 ```
 
-## Introduction
+# Introduction
 
 Wildfire frequency, intensity, and severity have increased over the last four decades across North America (Figure 1). Ecosystem stability pre- and post-fire over a continental scale remains poorly studied. This study investigates ecosystem stability dynamics over 40 years across Canada and the US, broken up by EPA Level 1 Ecotypes (Figure 4)[@cec_ecological_1997]. As climate change continues to impact our planet, understanding these ecosystem changes is paramount to the potential prediction of future environmental and economic impacts.
 
 ![Figure 1: Fire frequency by latitude and decade broken up by fire sizes.](images/fig1_fire_frequency_latitude.png){width=100%}
 
-## Methods
+# Methods
 
 NDVI data was required where fires were located on the year they burned, as well as all years before it burned and all years after it burned. NDVI from adjacent non-burned areas was also collected. All data and methods used in this project were free and openly sourced (CNFDB, USDA, GEE, R, Python, GitHub), allowing this work to be reproduced very easily (including code to generate this poster)[@gorelick_google_2017; @canadian_forest_service_canadian_2021; @welty_combined_2021]. General steps included (Figure 2):
 
@@ -95,19 +95,19 @@ Significant trends that are noted may indicate that the ecosystems stability may
 
 ![Figure 4: EPA Level 1 ecoregions across Canada and US.](images/fig4_ecoregions.png){width=100%}
 
-## Discussion
+# Discussion
 
 Some ecotypes that are perturbed by fire events will eventually return to their original state, however other ecotypes appear to change their state altogether. These altered stable states can have drastic effects on the biodiversity and ecological processes that occur in these areas. Further understanding how fire may impact these regions will be crucial in the face of climate change events which will undoubtedly increase fire risk across the globe.
 
 ![Figure 5: Stable state theory. Environmental disturbances can push an ecosystem from one stable state to another entirely new stable ecosystem. An equal and opposite force cannot push this ecosystem back to its original stable state.](images/fig5_stable_states.svg){width=100%}
 
-## Future Work
+# Future Work
 
 Climate variables will be incorporated into these analyses to further improve our understanding of how fire can impact ecosystem stability. Additionally, fire intensity can be calculated for each fire allowing deeper classification of ecosystem stability. Similar analyses can also be completed for other spectral indices which could lend further support to the alternative stable ecosystem state hypothesis.
 
 ## Acknowledgements
 
-<p class="references">This work could not have been completed without the immense expertise and support from Dr. Jay Prakash Singh, Dr. Lauchlan Fraser, and the entire team at the Fraser Lab.</p>
+<p class="references" style="margin-top: 0;">This work could not have been completed without the immense expertise and support from Dr. Jay Prakash Singh, Dr. Lauchlan Fraser, and the entire team at the Fraser Lab.</p>
 
 ![](images/Logo_Row.png){.logo-img}
 

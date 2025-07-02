@@ -104,7 +104,7 @@ border-radius: 2mm;
 }
 caption {
 margin-bottom: 10px;
-font-size: $if(caption_textsize)$$caption_textsize$$else$20pt$endif$;
+font-size: $if(caption_textsize)$$caption_textsize$$else$19.5pt$endif$;
 font-style: italic;
 }
 
@@ -129,13 +129,13 @@ th {
   padding-right: 5mm;
 }
 .caption {
-font-size: $if(caption_textsize)$$caption_textsize$$else$20pt$endif$;
+font-size: $if(caption_textsize)$$caption_textsize$$else$19.5pt$endif$;
 font-style: italic;
 padding-top: 0;
 }
 
 .figcaption {
-font-size: $if(caption_textsize)$$caption_textsize$$else$20pt$endif$;
+font-size: $if(caption_textsize)$$caption_textsize$$else$19.5pt$endif$;
 font-style: italic;
 padding-top: 0;
 text-align: center;
@@ -147,10 +147,6 @@ width: 100%;
 
 .caption > code {
 font-size: calc($caption_textsize$ * 0.8);
-}
-references {
-font-size: $if(reference_textsize)$$reference_textsize$$else$20px$endif$;
-line-height: 95%;
 }
 .references {
 font-size: $if(reference_textsize)$$reference_textsize$$else$20px$endif$;
@@ -252,11 +248,12 @@ font-size: $if(authorextra_textsize)$$authorextra_textsize$$else$35px$endif$;
 .outer h1 {
 text-align: center;
 margin-bottom: 0;
+margin-top: 0.24in;
 }
 .outer h2 {
 text-align: center;
 margin-bottom: 0;
-margin-top: 24pt;
+margin-top: 0.24in;
 }
 .outer h3 {
 text-align: center;
@@ -318,10 +315,12 @@ top: 23.76in;
 position: absolute;
 }
 .main p {
-padding-top: 0.24in;
-margin-top: 0;
-margin-bottom: 0;
 text-align: left;
+}
+.main h1 {
+text-align: center;
+margin-bottom: 0.12in;
+margin-top: 0.24in;
 }
 .main h2 {
 text-align: center;
@@ -404,6 +403,7 @@ span > #tab:mytable {
   display: block;
   margin-left: $if(main_padding)$$column_padding$$else$30mm$endif$;
   margin-right: $if(main_padding)$$column_padding$$else$30mm$endif$;
+  margin-bottom: 0.12in;
 }
 .orcid img {
   width: 3%;
@@ -470,7 +470,7 @@ $body$
 <div class="main">
 <div class="figure" style="text-align: center">$for(main_findings)$$main_findings$$sep$$endfor$
 <p class="caption">$for(main_findings2)$$main_findings2$$sep$$endfor$</p></div>
-<h2>$for(main_findings_heading)$$main_findings_heading$$sep$$endfor$</h2>
+<h1>$for(main_findings_heading)$$main_findings_heading$$sep$$endfor$</h1>
 <div class="figure" style="text-align: center">$for(main_findings3)$$main_findings3$$sep$$endfor$
 <p class="caption">$for(main_findings4)$$main_findings4$$sep$$endfor$</p></div>
 <ul>$for(main_findings5)$<li>$main_findings5$</li>$sep$$endfor$</ul>
