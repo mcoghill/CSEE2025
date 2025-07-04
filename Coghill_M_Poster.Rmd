@@ -84,7 +84,7 @@ Wildfire frequency, intensity, and severity have increased over the last four de
 
 # Methods
 
-NDVI data was required where fires were located on the year they burned, as well as all years before it burned and all years after it burned. NDVI from adjacent non-burned areas was also collected. All data and methods used in this project were free and openly sourced (CNFDB, USDA, GEE, R, Python, GitHub), allowing this work to be reproduced very easily (including code to generate this poster)[@gorelick_google_2017; @canadian_forest_service_canadian_2021; @welty_combined_2021]. General steps included (Figure 2):
+NDVI data was required where fires were located on the year they burned, as well as all years before it burned and all years after it burned. NDVI from adjacent non-burned areas was also collected. All data and methods used in this project were free and openly sourced (CNFDB, USDA, GEE, QGIS, R, Python, GitHub), allowing this work to be reproduced very easily (including code to generate this poster)[@gorelick_google_2017; @canadian_forest_service_canadian_2021; @welty_combined_2021]. General steps included (Figure 2):
 
 1. Download fire polygon data from Canada and US;
 2. Extract NDVI from Landsat satellite imagery for each fire and its surrounding areas for all years between 1985 and 2020;
@@ -108,7 +108,7 @@ Climate variables will be incorporated into these analyses to further improve ou
 
 ## Acknowledgements
 
-<p class="references" style="margin-top: 0;">Thank you to NSERC for the funding provided through the IRC Research Grant...ANYTHING ELSE?</p>
+<p class="references" style="margin-top: 0;">Thank you to NSERC for the funding provided through the IRC Research Grant and the NSERC Discovery Grant. Thank you to all members of the Fraser Lab for their support throughout this project.</p>
 
 ![](images/Logo_Row.png){.logo-img}
 
